@@ -1,10 +1,17 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Hiba</title>
+    <title>Kínálat</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/css/main.css" />
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body class="is-preload">
 <div id="page-wrapper">
@@ -18,8 +25,8 @@
         <!-- Nav -->
         <nav id="nav">
             <ul>
-                <li class="current"><a href="/index.html">Kezdőlap</a></li>
-                <li><a href="/kinalat">Kínálat</a></li>
+                <li><a href="/index.html">Kezdőlap</a></li>
+                <li class="current"><a href="/kinalat">Kínálat</a></li>
                 <li><a href="/kapcsolat">Kapcsolat</a></li>
                 <li><a href="/uzenetek">Üzenetek</a></li>
                 <li><a href="/diagram">Diagram</a></li>
@@ -36,15 +43,37 @@
     <section class="wrapper style2">
         <div class="container">
             <header class="major">
-                <div th:insert="menu"></div>
-                <h2 th:text="${uzenet}" />
-                <a href="/regisztral">Újra próbálás.</a>
+                <h1>Elérhető kínálat, árak (Ár tábla megjelenítése)</h1>
             </header>
         </div>
-
+        <div th:insert="menu"></div>
     </section>
 
 
+
+
+    <section class="wrapper style1">
+        <div class="container">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Süti ID</th>
+                    <th>Érték</th>
+                    <th>Egység</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ar : ${arak}">
+                    <td th:text="${ar.id}"></td>
+                    <td th:text="${ar.sutiid}"></td>
+                    <td th:text="${ar.ertek}"></td>
+                    <td th:text="${ar.egyseg}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
         <!-- Footer -->
         <div id="footer">

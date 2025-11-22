@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 public class HomeController {
+    public HomeController() {
+    }
+
     @GetMapping("/")
     public String home() {
         return "index";
@@ -36,6 +41,9 @@ public class HomeController {
         return "regisztral";
     }
 
+
+
+
     @Autowired
     private UserRepository userRepo;
     @PostMapping("/regisztral_feldolgoz")
@@ -55,4 +63,5 @@ public class HomeController {
         model.addAttribute("id", user.getId());
         return "regjo";
     }
+
 }

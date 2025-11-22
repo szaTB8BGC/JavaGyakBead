@@ -1,11 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>User Home</title>
+    <title>Felhasználó</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/main.css" />
 </head>
-<body>
-<div th:insert="menu"></div>
-<h1>Csak bejelentkezett felhasználó láthatja ezt az oldalt.</h1>
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header">
+
+        <!-- Logo -->
+        <h1><a href="/index.html" id="logo">Java Gyakorlat beadandó</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="/index.html">Kezdőlap</a></li>
+                <li><a href="/kinalat">Kínálat</a></li>
+                <li><a href="/kapcsolat">Kapcsolat</a></li>
+                <li><a href="/uzenetek">Üzenetek</a></li>
+                <li><a href="/diagram">Diagram</a></li>
+                <li><a href="/crud">CRUD</a></li>
+                <li><a href="/restful">Restful</a></li>
+                <li><a href="/Admin">Admin menü</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- Gigantic Heading -->
+    <section class="wrapper style2">
+        <div class="container">
+            <header class="major">
+                <div th:insert="menu"></div>
+                <h1>Sikeres bejelentkezés.</h1>
+            </header>
+        </div>
+
+    </section>
+
+
+
+        <!-- Footer -->
+        <div id="footer">
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; Szebeni Szabolcs java gyakorlat beadandó</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.dropotron.min.js"></script>
+<script src="/js/browser.min.js"></script>
+<script src="/js/breakpoints.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+
 </body>
 </html>

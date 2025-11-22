@@ -1,10 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Kezdőlap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
 </head>
-<body>
-<div th:insert="menu"></div>
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header">
+
+        <!-- Logo -->
+        <h1><a href="/index.html" id="logo">Java Gyakorlat beadandó</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="/index.html">Kezdőlap</a></li>
+                <li><a href="/kinalat">Kínálat</a></li>
+                <li><a href="/kapcsolat">Kapcsolat</a></li>
+                <li><a href="/uzenetek">Üzenetek</a></li>
+                <li><a href="/diagram">Diagram</a></li>
+                <li><a href="/crud">CRUD</a></li>
+                <li><a href="/restful">Restful</a></li>
+                <li><a href="/Admin">Admin menü</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- Gigantic Heading -->
+    <section class="wrapper style2">
+        <div class="container">
+            <header class="major">
+                <h2>Java gyakorlat beadandó feladat, felhasznált téma: HTML5 UP Arcana</h2>
+                <p>Szöveg</p>
+            </header>
+        </div>
+        <div th:insert="menu"></div>
+    </section>
+
+    <section class="wrapper style1">
+        <div class="container">
+            <div class="row">
+                <section class="col-6 col-12-narrower">
+                    <div class="box post">
+                        <a href="#" class="image left"><img src="images/pic01.jpg" alt="" /></a>
+                        <div class="inner">
+                            <h3>1</h3>
+                            <p>Szöveg</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-6 col-12-narrower">
+                    <div class="box post">
+                        <a href="#" class="image left"><img src="images/pic02.jpg" alt="" /></a>
+                        <div class="inner">
+                            <h3>2</h3>
+                            <p>Szöveg</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col-6 col-12-narrower">
+                    <div class="box post">
+                        <a href="#" class="image left"><img src="images/pic03.jpg" alt="" /></a>
+                        <div class="inner">
+                            <h3>3</h3>
+                            <p>Szöveg</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-6 col-12-narrower">
+                    <div class="box post">
+                        <a href="#" class="image left"><img src="images/pic04.jpg" alt="" /></a>
+                        <div class="inner">
+                            <h3>4</h3>
+                            <p>Szöveg</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col-6 col-12-narrower">
+                    <div class="box post">
+                        <a href="#" class="image left"><img src="images/pic03.jpg" alt="" /></a>
+                        <div class="inner">
+                            <h3>5</h3>
+                            <p>Szöveg</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-6 col-12-narrower">
+                    <div class="box post">
+                        <a href="#" class="image left"><img src="images/pic04.jpg" alt="" /></a>
+                        <div class="inner">
+                            <h3>6</h3>
+                            <p>Szöveg</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+        <div id="footer">
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; Szebeni Szabolcs java gyakorlat beadandó</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.dropotron.min.js"></script>
+<script src="/js/browser.min.js"></script>
+<script src="/js/breakpoints.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+
 </body>
 </html>

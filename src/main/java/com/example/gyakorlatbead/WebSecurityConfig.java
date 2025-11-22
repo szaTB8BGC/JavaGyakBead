@@ -29,9 +29,16 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers ("/resources/**", "/", "/regisztral", "/regisztral_feldolgoz").anonymous()
+                        //statikus erőforrások
+                        .requestMatchers("/css/**", "/js/**", "/images/**", "/sass/**", "/webfonts/**").anonymous()
+
+                        //nyilvános oldalak
+                        .requestMatchers ("/resources/**", "/", "/regisztral", "/regisztral_feldolgoz", "/kinalat", "/ar").anonymous()
+                        //jelszó teszt
                         .requestMatchers("/","/jelszoteszt").anonymous()
+                        //hitelesítéshez között
                         .requestMatchers("/resources/**", "/", "/home").authenticated()
+                        //admin
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                 )
                 .formLogin(form -> form

@@ -1,0 +1,28 @@
+-- 1. Süti tábla létrehozása
+CREATE TABLE suti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(255) NOT NULL,
+    tipus VARCHAR(100) NOT NULL,
+    dijazott BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+-- 2. Tartalom tábla létrehozása
+CREATE TABLE tartalom (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sutiid INT NOT NULL,
+    mentes VARCHAR(50),
+    FOREIGN KEY (sutiid) REFERENCES suti(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+-- 3. Ár tábla létrehozása
+CREATE TABLE ar (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sutiid INT NOT NULL,
+    ertek INT NOT NULL,
+    egyseg VARCHAR(50),
+    FOREIGN KEY (sutiid) REFERENCES suti(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
