@@ -27,13 +27,13 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
+        /*http
                 .authorizeHttpRequests(auth -> auth
                         //statikus erőforrások
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/sass/**", "/webfonts/**").anonymous()
 
                         //nyilvános oldalak
-                        .requestMatchers ("/resources/**", "/", "/regisztral", "/regisztral_feldolgoz", "/kinalat", "/ar").anonymous()
+                        .requestMatchers ("/resources/**", "/", "/regisztral", "/regisztral_feldolgoz", "/kinalat", "/ar", "/kapcsolat", "/eredmeny").anonymous()
                         //jelszó teszt
                         .requestMatchers("/","/jelszoteszt").anonymous()
                         //hitelesítéshez között
@@ -48,9 +48,11 @@ public class WebSecurityConfig {
                 .logout(logout -> logout
                         .logoutSuccessUrl("/")
                         .permitAll()
-                );
-
+                );*/
+  http.authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
         return http.build();
+
+
     }
 
     @Bean

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Kezdőlap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header">
+
+        <!-- Logo -->
+        <h1><a href="/index.html" id="logo">Java Gyakorlat beadandó</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/index.html">Kezdőlap</a></li>
+                <li><a href="/kinalat">Kínálat</a></li>
+                <li class="current"><a href="/kapcsolat">Kapcsolat</a></li>
+                <li><a href="/uzenetek">Üzenetek</a></li>
+                <li><a href="/diagram">Diagram</a></li>
+                <li><a href="/crud">CRUD</a></li>
+                <li><a href="/restful">Restful</a></li>
+                <li><a href="/Admin">Admin menü</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- Gigantic Heading -->
+    <section class="wrapper style2">
+        <div class="container">
+            <header class="major">
+                <h2>Űrlap</h2>
+            </header>
+        </div>
+        <div th:insert="menu"></div>
+    </section>
+
+    <section class="wrapper style1">
+        <div>
+            <form action="#" th:action="@{/kapcsolatk}" th:object="${message}" method="post">
+                <p>Név: (Min 2, Max 30 karakter) <input type="text" th:field="*{name}" /></p>
+                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+                <p>Tárgy: (Min 2, Max 30 karakter) <input type="text" th:field="*{topic}" /></p>
+                <p th:if="${#fields.hasErrors('topic')}" th:errors="*{topic}"></p>
+                <p>Üzenet: (Min 2, Max 250 karakter) <input type="text" th:field="*{content}" /></p>
+                <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></p>
+
+                <p><input type="submit" value="Elküld" /> <input type="reset" value="Helyreállít" /></p>
+            </form>
+        </div>>
+    </section>
+
+        <!-- Footer -->
+        <div id="footer">
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; Szebeni Szabolcs java gyakorlat beadandó</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.dropotron.min.js"></script>
+<script src="/js/browser.min.js"></script>
+<script src="/js/breakpoints.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

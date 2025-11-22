@@ -43,7 +43,6 @@ public class HomeController {
 
 
 
-
     @Autowired
     private UserRepository userRepo;
     @PostMapping("/regisztral_feldolgoz")

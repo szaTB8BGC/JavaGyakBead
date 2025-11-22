@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Kezdőlap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header">
+
+        <!-- Logo -->
+        <h1><a href="/index" id="logo">Java Gyakorlat beadandó</a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/index">Kezdőlap</a></li>
+                <li><a href="/kinalat">Kínálat</a></li>
+                <li class="current"><a href="/kapcsolat">Kapcsolat</a></li>
+                <li><a href="/uzenetek">Üzenetek</a></li>
+                <li><a href="/diagram">Diagram</a></li>
+                <li><a href="/crud">CRUD</a></li>
+                <li><a href="/restful">Restful</a></li>
+                <li><a href="/Admin">Admin menü</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- Gigantic Heading -->
+    <section class="wrapper style2">
+        <div class="container">
+            <header class="major">
+                <h2>Elküldött üzenet</h2>
+            </header>
+        </div>
+        <div th:insert="menu"></div>
+    </section>
+
+    <section class="wrapper style1">
+        <div>
+            <p th:text="'Név: ' + ${attr2.name}" />
+            <p th:text="'Tárgy: ' + ${attr2.topic}" />
+            <p th:text="'Üzenet: ' + ${attr2.content}" />
+            <a href="/kapcsolat">Másik üzenet küldése</a>
+        </div>>
+    </section>
+
+        <!-- Footer -->
+        <div id="footer">
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; Szebeni Szabolcs java gyakorlat beadandó</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.dropotron.min.js"></script>
+<script src="/js/browser.min.js"></script>
+<script src="/js/breakpoints.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
