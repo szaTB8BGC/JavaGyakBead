@@ -103,6 +103,12 @@ public class OtherController {
         return "modosit";
     }
 
+    @PostMapping("/modosit")
+    public String updateTartalom(@ModelAttribute Tartalom tartalom) {
+        tartalomRepo.save(tartalom);
+        return "redirect:/crud";
+    }
+
     @GetMapping("/torles/{id}")
     public String deleteTartalom(@PathVariable(name = "id") int id) {
         tartalomRepo.delete(tartalomRepo.findById(id).get());

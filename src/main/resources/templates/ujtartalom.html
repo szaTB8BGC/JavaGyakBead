@@ -52,7 +52,6 @@
     <section class="wrapper style1">
         <div>
             <form action="#" th:action="@{/ment}" th:object="${tartalom}" method="post">
-                <p>ID:<input type="text" th:field="*{id}" placeholder="ID" required/></p>
                 <p>Sütiid:<input type="text" th:field="*{sutiid}" placeholder="Süti id" required/></p>
                 <p>Mentes:<input type="text" th:field="*{mentes}" placeholder="Mentes" required/></p>
                 <p><input type="submit" value="Hozzáad" /></p>

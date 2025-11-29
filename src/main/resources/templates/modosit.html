@@ -52,6 +52,7 @@
     <section class="wrapper style1">
         <div>
             <form action="#" th:action="@{/modosit}" th:object="${tartalom}" method="post">
+                <input type="hidden" th:field="*{id}"/>
                 <p>Sütiid:<input type="text" th:field="*{sutiid}" value= "${tartalom.sutiid}" required/></p>
                 <p>Mentes:<input type="text" th:field="*{mentes}" value= "${tartalom.mentes}" required/></p>
                 <p><input type="submit" value="Módosít" /></p>
